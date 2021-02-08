@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GameStart
     - MainScene
     - PipeMove
     Unity.2D.Animation.Editor.dll:
@@ -45,9 +46,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -69,6 +78,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15012}
     - Class: 114
       Script: {instanceID: 15122}
+    - Class: 114
+      Script: {instanceID: 19284}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -444,7 +455,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 087baa97d74e274276cae06e413d7525
+      Hash: 53386def026464986e2a72d3eef8e6ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainScene
@@ -580,6 +591,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 6da9ada9d20f1bfaa431080d7f9cca72
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameStart
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main.unity
