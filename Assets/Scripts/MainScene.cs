@@ -7,22 +7,21 @@ public class MainScene : MonoBehaviour
 {
     public Text txt;
     public Outline oLine;
-    private GameObject pipe1Down, pipe1Up, pipe2Down, pipe2Up;
-    public GameObject pipeDownPf, pipeUpPf;
     public bool enableText = true;
-    private float downPipe1PosX, downPipe1PosY, downPipe2Pos;
+    public GameObject pipe1, pipe2, pipe1Down, pipe1Up, pipe2Down, pipe2Up; 
     void Start()
     {
-        pipe1Down = Instantiate(pipeDownPf, new Vector3(Random.Range(6.5f, 8f),Random.Range(-10.75f, -4.15f),0f), Quaternion.identity) as GameObject;
-        downPipe1PosY = pipe1Down.GetComponent<Transform>().localPosition.y;
-        downPipe1PosX = pipe1Down.GetComponent<Transform>().localPosition.x;
-        pipe1Up = Instantiate(pipeUpPf, new Vector3(Random.Range(6.5f, 8f), Random.Range(downPipe1PosY + 14f, downPipe1PosY + 19f), -1f), Quaternion.identity) as GameObject;
-        //
-        pipe2Down = Instantiate(pipeDownPf, new Vector3(downPipe1PosX + Random.Range(4f, 8f), Random.Range(-10.75f, -4.15f), 0f), Quaternion.identity) as GameObject;
-        downPipe2Pos = pipe2Down.GetComponent<Transform>().localPosition.y;
-        pipe2Up = Instantiate(pipeUpPf, new Vector3(pipe2Down.GetComponent<Transform>().localPosition.x, Random.Range(downPipe2Pos + 14f, downPipe2Pos + 19f), -1f), Quaternion.identity) as GameObject;
+        //-14, -6
+        //a+18, a+21
+        pipe1Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
+        pipe1Up.transform.position = new Vector3(0f, Random.Range(pipe1Down.transform.position.y + 18f, pipe1Down.transform.position.y + 21f), 8f);
+        pipe1.transform.position = new Vector3(8f, 0f, 0f);
+
+        pipe2Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
+        pipe2Up.transform.position = new Vector3(0f, Random.Range(pipe2Down.transform.position.y + 18f, pipe2Down.transform.position.y + 21f), 8f);
+        pipe2.transform.position = new Vector3(16f, 0f, 0f);
     }
-    void Update()
+    void FixedUpdate()
     {
         if (enableText)
         {
@@ -38,18 +37,6 @@ public class MainScene : MonoBehaviour
                 txt.GetComponent<RectTransform>().offsetMax += new Vector2(txt.GetComponent<RectTransform>().offsetMax.x, -10f);
                 txt.GetComponent<RectTransform>().offsetMin += new Vector2(txt.GetComponent<RectTransform>().offsetMin.x, -10f);
             }
-        }
-        if (pipe1Down.GetComponent<Transform>().position.x <= -7)
-        {
-            pipe1Down.transform.position = new Vector3(Random.Range(6.5f, 8f), Random.Range(-10.75f, -4.15f), 0f);
-            downPipe1PosY = pipe1Down.GetComponent<Transform>().localPosition.y;
-            pipe1Up.transform.position = new Vector3(Random.Range(6.5f, 8f), Random.Range(downPipe1PosY + 14f, downPipe1PosY + 19f), 0f);
-        }
-        else if (pipe2Down.GetComponent<Transform>().position.x <= -7)
-        {
-            pipe2Down.transform.position = new Vector3(downPipe1PosX, Random.Range(-10.75f, -4.15f), 0f);
-            downPipe2Pos = pipe2Down.GetComponent<Transform>().localPosition.y;
-            pipe2Up.transform.position = new Vector3(pipe2Down.GetComponent<Transform>().localPosition.x, Random.Range(downPipe1PosY + 14f, downPipe1PosY + 19f), 0f);
         }
     }
 }

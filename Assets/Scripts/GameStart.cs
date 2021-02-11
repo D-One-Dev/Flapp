@@ -10,7 +10,7 @@ public class GameStart : MonoBehaviour
     {
         
     }
-    void Update()
+    void FixedUpdate()
     {
         
     }
