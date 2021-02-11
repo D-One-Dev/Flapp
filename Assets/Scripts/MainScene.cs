@@ -7,8 +7,8 @@ public class MainScene : MonoBehaviour
 {
     public Text txt;
     public Outline oLine;
-    public bool enableText = true;
-    public GameObject pipe1, pipe2, pipe1Down, pipe1Up, pipe2Down, pipe2Up; 
+    public bool enableText = true, gamePause = false;
+    public GameObject pipe1, pipe2, pipe1Down, pipe1Up, pipe2Down, pipe2Up, pause; 
     void Start()
     {
         //-14, -6
@@ -23,19 +23,23 @@ public class MainScene : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (enableText)
+        if (!gamePause)
         {
-            txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, Mathf.PingPong(Time.time, 1f));
-            oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, txt.color.a);
-        }
-        else
-        {
-            txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, 1f);
-            oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, 1f);
-            if (txt.GetComponent<RectTransform>().offsetMax.y > -1000f)
+            if (enableText)
             {
-                txt.GetComponent<RectTransform>().offsetMax += new Vector2(txt.GetComponent<RectTransform>().offsetMax.x, -10f);
-                txt.GetComponent<RectTransform>().offsetMin += new Vector2(txt.GetComponent<RectTransform>().offsetMin.x, -10f);
+                txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, Mathf.PingPong(Time.time, 1f));
+                oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, txt.color.a);
+            }
+            else
+            {
+                txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, 1f);
+                oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, 1f);
+                txt.GetComponent<RectTransform>().localPosition = new Vector2(txt.GetComponent<RectTransform>().localPosition.x, -750);
+                txt.text = ("0");
+                txt.fontSize = 200;
+                oLine.effectDistance = new Vector2(4, -4);
+
+                pause.transform.position = new Vector3(-3.5f, 9f, -9.5f);
             }
         }
     }
