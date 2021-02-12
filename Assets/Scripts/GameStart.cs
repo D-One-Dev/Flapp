@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     private bool isGameOn = false;
-    public GameObject canv;
+    public GameObject canv, bird;
     void Start()
     {
         
@@ -20,6 +20,11 @@ public class GameStart : MonoBehaviour
         {
             isGameOn = true;
             canv.GetComponent<MainScene>().enableText = false;
+            bird.GetComponent<Rigidbody2D>().gravityScale = 8f;
+        }
+        else
+        {
+            bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 45f);
         }
     }
 }

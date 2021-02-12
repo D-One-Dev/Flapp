@@ -57,9 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PipeMove.cs" />
+    <Compile Include="Assets\Scripts\GamePause.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\MainScene.cs" />
-    <Compile Include="Assets\Scripts\GamePause.cs" />
+    <Compile Include="Assets\Scripts\GameRestart.cs" />
+    <Compile Include="Assets\Scripts\BirdController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

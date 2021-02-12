@@ -11,8 +11,6 @@ public class MainScene : MonoBehaviour
     public GameObject pipe1, pipe2, pipe1Down, pipe1Up, pipe2Down, pipe2Up, pause; 
     void Start()
     {
-        //-14, -6
-        //a+18, a+21
         pipe1Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
         pipe1Up.transform.position = new Vector3(0f, Random.Range(pipe1Down.transform.position.y + 18f, pipe1Down.transform.position.y + 21f), 8f);
         pipe1.transform.position = new Vector3(8f, 0f, 0f);

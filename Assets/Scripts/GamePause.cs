@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GamePause : MonoBehaviour
 {
-    public GameObject canvas, pipe1, pipe2;
+    public GameObject canvas, pipe1, pipe2, menuButton, bird;
     private bool gameStatus = true;
     void Start()
     {
-        // -3.5, 9, -9.5
+        
     }
     void Update()
     {
@@ -23,6 +23,9 @@ public class GamePause : MonoBehaviour
             pipe2.GetComponent<PipeMove>().pipeMove = false;
             transform.position = new Vector3(0f, 0f, -9.5f);
             transform.localScale = new Vector3(1f, 1f, 1f);
+            menuButton.transform.position = new Vector3(0f, -3f, -9.5f);
+            bird.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             gameStatus = false;
         }
         else
@@ -32,6 +35,9 @@ public class GamePause : MonoBehaviour
             pipe2.GetComponent<PipeMove>().pipeMove = true;
             transform.position = new Vector3(-3.5f, 9f, -9.5f);
             transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            menuButton.transform.position = new Vector3(-6.5f, 6f, -9.5f);
+            bird.GetComponent<Rigidbody2D>().gravityScale = 8f;
+            bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             gameStatus = true;
         }
     }
