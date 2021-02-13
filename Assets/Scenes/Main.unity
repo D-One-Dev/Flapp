@@ -171,6 +171,8 @@ MonoBehaviour:
   pipeDown: {fileID: 1694294713}
   pipeUp: {fileID: 340372743}
   pipeMove: 1
+  pipePassed: 0
+  pipeSpeed: 2
 --- !u!1 &340372743
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +823,7 @@ MonoBehaviour:
   oLine: {fileID: 1837540939}
   enableText: 1
   gamePause: 0
+  score: 1
   pipe1: {fileID: 298961807}
   pipe2: {fileID: 1035086719}
   pipe1Down: {fileID: 1694294713}
@@ -998,6 +1001,8 @@ MonoBehaviour:
   pipeDown: {fileID: 560788638}
   pipeUp: {fileID: 460462296}
   pipeMove: 1
+  pipePassed: 0
+  pipeSpeed: 2
 --- !u!1 &1163969573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1213,14 @@ MonoBehaviour:
   sr: {fileID: 1528199905}
   birdJump: {fileID: 21300000, guid: 483cd6b8d963b424b9101a923ed49521, type: 3}
   birdFall: {fileID: 21300000, guid: ddac9bbade3b6a8448a4a8b25ea5184a, type: 3}
+  gravityScale: 10
+  velocity: 45
+  canvas: {fileID: 677599202}
+  pipe1: {fileID: 298961807}
+  pipe2: {fileID: 1035086719}
+  menuButton: {fileID: 736384442}
+  pauseButton: {fileID: 1163969573}
+  txt: {fileID: 1837540937}
 --- !u!212 &1528199905
 SpriteRenderer:
   m_ObjectHideFlags: 0

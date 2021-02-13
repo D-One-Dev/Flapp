@@ -6,9 +6,11 @@ public class GameStart : MonoBehaviour
 {
     private bool isGameOn = false;
     public GameObject canv, bird;
+    private float birdGrav, birdSpd;
     void Start()
     {
-        
+        birdGrav = bird.GetComponent<BirdController>().gravityScale;
+        birdSpd = bird.GetComponent<BirdController>().velocity;
     }
     void FixedUpdate()
     {
@@ -20,11 +22,11 @@ public class GameStart : MonoBehaviour
         {
             isGameOn = true;
             canv.GetComponent<MainScene>().enableText = false;
-            bird.GetComponent<Rigidbody2D>().gravityScale = 8f;
+            bird.GetComponent<Rigidbody2D>().gravityScale = birdGrav;
         }
         else
         {
-            bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 45f);
+            bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, birdSpd);
         }
     }
 }
