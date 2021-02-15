@@ -354,13 +354,13 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: e642529917e363dc7c6c19f27e5f24d8
+      Hash: 344fcc64a318d8e11681db072b235b53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePause
   - hash:
       serializedVersion: 2
-      Hash: 430efe1d9bde0dcee59f3a8d798ae807
+      Hash: 3d9dfc1521a6eefde842ab4550c9ca61
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameStart
@@ -516,7 +516,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 7ded498905138618d959bf119924219a
+      Hash: abf15ad4b39a189afee183fe16345e54
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdController
@@ -631,4 +631,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: C:/Unity/Projects/Flapp/Flapp.apk
+  playerPath: E:/Unity/Projects/Flapp/Flapp.apk

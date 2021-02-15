@@ -12,11 +12,11 @@ public class MainScene : MonoBehaviour
     void Start()
     {
         pipe1Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
-        pipe1Up.transform.position = new Vector3(0f, Random.Range(pipe1Down.transform.position.y + 18f, pipe1Down.transform.position.y + 21f), 8f);
+        pipe1Up.transform.position = new Vector3(0f, Random.Range(pipe1Down.transform.position.y + 22f, pipe1Down.transform.position.y + 24f), 8f);
         pipe1.transform.position = new Vector3(8f, 0f, 0f);
 
         pipe2Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
-        pipe2Up.transform.position = new Vector3(0f, Random.Range(pipe2Down.transform.position.y + 18f, pipe2Down.transform.position.y + 21f), 8f);
+        pipe2Up.transform.position = new Vector3(0f, Random.Range(pipe2Down.transform.position.y + 22f, pipe2Down.transform.position.y + 24f), 8f);
         pipe2.transform.position = new Vector3(24f, 0f, 0f);
     }
     void FixedUpdate()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GamePause : MonoBehaviour
 {
-    public GameObject canvas, pipe1, pipe2, menuButton, bird;
+    public GameObject canvas, pipe1, pipe2, menuButton, bird, touchScreen;
     private bool gameStatus = true;
     private float birdGrav, birdSpd;
     void Start()
@@ -28,6 +28,7 @@ public class GamePause : MonoBehaviour
             menuButton.transform.position = new Vector3(0f, -3f, -9.5f);
             bird.GetComponent<Rigidbody2D>().gravityScale = 0f;
             bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            touchScreen.GetComponent<GameStart>().isGamePaused = true;
             gameStatus = false;
         }
         else
@@ -40,6 +41,7 @@ public class GamePause : MonoBehaviour
             menuButton.transform.position = new Vector3(-6.5f, 6f, -9.5f);
             bird.GetComponent<Rigidbody2D>().gravityScale = birdGrav;
             bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            touchScreen.GetComponent<GameStart>().isGamePaused = false;
             gameStatus = true;
         }
     }
