@@ -35,6 +35,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.AspectRatioFitter
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Outline
@@ -73,6 +74,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11820}
     - Class: 114
       Script: {instanceID: 12126}
+    - Class: 114
+      Script: {instanceID: 12488}
     - Class: 114
       Script: {instanceID: 12730}
     - Class: 114
@@ -354,13 +357,13 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 344fcc64a318d8e11681db072b235b53
+      Hash: c3ea85de71d7a36570a4100b0770e322
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePause
   - hash:
       serializedVersion: 2
-      Hash: 3d9dfc1521a6eefde842ab4550c9ca61
+      Hash: 8d955fbed84b8871ce28a8f41bd82ca8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameStart

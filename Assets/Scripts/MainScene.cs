@@ -13,11 +13,11 @@ public class MainScene : MonoBehaviour
     {
         pipe1Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
         pipe1Up.transform.position = new Vector3(0f, Random.Range(pipe1Down.transform.position.y + 22f, pipe1Down.transform.position.y + 24f), 8f);
-        pipe1.transform.position = new Vector3(8f, 0f, 0f);
+        pipe1.transform.position = new Vector3(12f, 0f, 0f);
 
         pipe2Down.transform.position = new Vector3(0f, Random.Range(-14f, -6f), 8f);
         pipe2Up.transform.position = new Vector3(0f, Random.Range(pipe2Down.transform.position.y + 22f, pipe2Down.transform.position.y + 24f), 8f);
-        pipe2.transform.position = new Vector3(24f, 0f, 0f);
+        pipe2.transform.position = new Vector3(36f, 0f, 0f);
     }
     void FixedUpdate()
     {
@@ -34,7 +34,7 @@ public class MainScene : MonoBehaviour
                 {
                     txt.color = new Color(txt.color.r, txt.color.g, txt.color.b, 1f);
                     oLine.effectColor = new Color(oLine.effectColor.r, oLine.effectColor.g, oLine.effectColor.b, 1f);
-                    txt.GetComponent<RectTransform>().localPosition = new Vector2(txt.GetComponent<RectTransform>().localPosition.x, -750);
+                    //txt.GetComponent<RectTransform>().localPosition = new Vector2(txt.GetComponent<RectTransform>().localPosition.x, -750);
                     txt.text = ("0");
                     txt.fontSize = 200;
                     oLine.effectDistance = new Vector2(4, -4);

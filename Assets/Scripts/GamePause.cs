@@ -7,10 +7,13 @@ public class GamePause : MonoBehaviour
     public GameObject canvas, pipe1, pipe2, menuButton, bird, touchScreen;
     private bool gameStatus = true;
     private float birdGrav, birdSpd;
+    public SpriteRenderer sr;
+    public Sprite pauseSr, playSr;
     void Start()
     {
         birdGrav = bird.GetComponent<BirdController>().gravityScale;
         birdSpd = bird.GetComponent<BirdController>().velocity;
+        sr.sprite = pauseSr;
     }
     void Update()
     {
@@ -20,6 +23,7 @@ public class GamePause : MonoBehaviour
     {
         if (gameStatus == true)
         {
+            sr.sprite = playSr;
             canvas.GetComponent<MainScene>().gamePause = true;
             pipe1.GetComponent<PipeMove>().pipeMove = false;
             pipe2.GetComponent<PipeMove>().pipeMove = false;
@@ -33,12 +37,13 @@ public class GamePause : MonoBehaviour
         }
         else
         {
+            sr.sprite = pauseSr;
             canvas.GetComponent<MainScene>().gamePause = false;
             pipe1.GetComponent<PipeMove>().pipeMove = true;
             pipe2.GetComponent<PipeMove>().pipeMove = true;
             transform.position = new Vector3(-3.5f, 9f, -9.5f);
             transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-            menuButton.transform.position = new Vector3(-6.5f, 6f, -9.5f);
+            menuButton.transform.position = new Vector3(-10f, 6f, -9.5f);
             bird.GetComponent<Rigidbody2D>().gravityScale = birdGrav;
             bird.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             touchScreen.GetComponent<GameStart>().isGamePaused = false;

@@ -24,9 +24,11 @@ public class BirdController : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(0f, 0f);
         menuButton.transform.position = new Vector3(0f, -3f, -9.5f);
-        pauseButton.transform.position = new Vector3(-6.5f, 9f, -9.5f);
+        pauseButton.transform.position = new Vector3(-10f, 9f, -9.5f);
         pauseButton.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        txt.GetComponent<RectTransform>().localPosition = new Vector2(txt.GetComponent<RectTransform>().localPosition.x, 0f);
+        //txt.GetComponent<RectTransform>().localPosition = new Vector2(txt.GetComponent<RectTransform>().localPosition.x, 0f);
+        //txt.GetComponent<RectTransform>().anchorMax = new Vector2(txt.GetComponent<RectTransform>().anchorMax.x, 1f);
+        txt.transform.position = new Vector3(txt.transform.position.x, 0f, txt.transform.position.z);
         htxt.transform.position = new Vector3(htxt.transform.position.x, -7f, htxt.transform.position.z);
         score = PlayerPrefs.GetInt("HighScore");
         hScore = score.ToString();
