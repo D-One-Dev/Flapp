@@ -1,16 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PipeMove : MonoBehaviour
 {
     public GameObject pipeDown, pipeUp;
     public bool pipeMove = true, pipePassed = false;
     public float pipeSpeed;
-    void Start()
-    {
-        
-    }
     void FixedUpdate()
     {
         if (pipeMove)

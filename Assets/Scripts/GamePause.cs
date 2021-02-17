@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GamePause : MonoBehaviour
 {
@@ -14,10 +12,6 @@ public class GamePause : MonoBehaviour
         birdGrav = bird.GetComponent<BirdController>().gravityScale;
         birdSpd = bird.GetComponent<BirdController>().velocity;
         sr.sprite = pauseSr;
-    }
-    void Update()
-    {
-        
     }
     void OnMouseDown()
     {
